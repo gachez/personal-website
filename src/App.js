@@ -10,6 +10,7 @@ import B2b from './assets/b2b.png'
 import DS from './assets/ds.png'
 import Anasa from './assets/anasa.png'
 import Down from './assets/down-arrow.png'
+import React from 'react';
 
 const projects = [
   {
@@ -61,40 +62,48 @@ const projects = [
 
 const skills = [
   {
-    name: 'Frontend Development'
+    name: 'Frontend Development',
+    description: 'Javascript, Typescript, ReactJs, HTML, CSS, SaSS, Tailwind, React Native'
   },
   {
-    name: 'Backend Development'
+    name: 'Backend Development',
+    description: 'NodeJs, Express, Python, Rust'
   },
   {
-    name: 'Database Development'
+    name: 'Database Development',
+    description: 'SQL, TypeORM, MongoDB, PostgresQl'
   },
   {
-    name: 'Version Control'
+    name: 'Version Control',
+    description: 'Git, Github, Bitbucket'
   }
 ]
 
 function App() {
+  const [selectedSkill, setSelectedSkill] = React.useState('')
+  React.useEffect(() => {
+    setSelectedSkill(selectedSkill)
+  },[selectedSkill])
   return (
     <div className="Container">
       <div className='navbar'>
         <h2 className='navbar-icon'>BG</h2>
         <div className='navbar-items'>
-          <p>Work</p>
-          <p>About</p>
-          <p>Resume</p>
-          <p>Contact</p>
+          <a href='#work'><p>Work</p></a>
+          <a href='#skills'><p>Skills</p></a>
+          <a href='#resume'><p>Resume</p></a>
+          <a href='#contact'><p>Contact</p></a>
         </div>
       </div>
-      <div className='hero'>
+      <div className='hero' id='hero'>
         <div className='hero-div'>
           <h1 className='hero-title'>Hello 👋, I'm Brian a Software engineer, Innovator and Enterprenuer</h1>
           <p className='hero-subtitle'>I build perfomant websites and mobile apps using React</p>
         </div>
       </div>
-      <div className='banner'>
+      <div className='banner' id='banner'>
       </div>
-      <div className='work'>
+      <div className='work' id='work'>
         <h1 className='work-title'>Work</h1>
         <div className='work-section'>
             <div className='section-title-desc'>
@@ -180,7 +189,7 @@ function App() {
             </div>
       </div>
       </div>
-      <div className='skills'>
+      <div className='skills' id='skills' >
               <div className='skills-A'>
                 <p className='skills-A-title'>My skills</p>
               </div>
@@ -188,10 +197,15 @@ function App() {
                  {
                   skills.map(it => {
                     return(
-                    <div className='skills-item' >
-                      <h4 className='skills-item-title'>{it.name}</h4>
-                      <div className='down'>
-                        <img style={{width: '24px', height: '16px', objectFit: 'contain'}}  src={Down}  />
+                    <div className='skills-item' onClick={() => {
+                      selectedSkill === it.name?setSelectedSkill(''):setSelectedSkill(it.name)
+                    }}>
+                      <div className='skill-item-section'>
+                        <h4 className='skills-item-title'>{it.name}</h4>
+                        {/* <div className='down'>
+                          <img style={{width: '24px', height: '16px', objectFit: 'contain'}}  src={Down}  />
+                        </div> */}
+                        <p style={{color:'#fff', display: selectedSkill===it.name?'block':'none'}}>{it.description}</p>
                       </div>
                    </div>
                     )

@@ -1,3 +1,6 @@
+html{
+  scroll-behavior: smooth;
+}
 .Container{
   background-color: #fff;
 }
@@ -22,6 +25,16 @@
   justify-content: space-between;
   font-weight: 400;
   letter-spacing: 0.15em;
+}
+.navbar-items a{
+  text-decoration: none;
+  color: #191b1d;
+}
+.navbar-items a:hover{
+  color: rgba(0,0,0,0.4);
+}
+.navbar-items a:focus{
+  color: rgba(0,0,0,0.4);
 }
 .hero{
   background-color: #cdcecf;
@@ -120,7 +133,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 80vh;
+  height: auto;
 }
 .skills-A{
   font-size: 34px;
@@ -130,6 +143,7 @@
   padding: 10%;
 }
 .skills-B{
+  padding-top: 10%;
   width: 50%;
 }
 .down{
