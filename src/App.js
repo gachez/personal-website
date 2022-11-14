@@ -1,6 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
 import Video from './assets/videos/video.mp4'
+import Dior from './assets/dior.jpg'
+
+const projects = [
+  {
+    name: 'Auditpap - Personal finance application',
+    img: 'http://auditpap.tengezastudios.co.ke/images/mockups.png',
+    category: 'digital products'
+  },
+  {
+    name: 'Elimufy - School system',
+    img: Dior,
+    category: 'digital products'
+  }
+]
 
 function App() {
   return (
@@ -24,7 +38,58 @@ function App() {
       </div>
       <div className='work'>
         <h1 className='work-title'>Work</h1>
-        <div></div>
+        <div className='work-section'>
+            <div className='section-title-desc'>
+              <div className='numberRound'>
+                <span>01</span>
+              </div>
+              <div className='section-details' >
+                <h3 className='section-subtitle'>Digital Products</h3>
+                <p className='section-subparagraph'>
+                  From idea to a product: 
+                  creating successful digital services for innovative 
+                  startups and established businesses with cutting-edge 
+                  UX, UI design,front and back-end development.</p>
+              </div>
+            </div>
+            <div className='projects-container'>
+              {
+                projects.map(it => {
+                  return(
+                    <div className='project'>
+                      <img src={it.img} className='project-img' />
+                      <span className='project-title'>{it.name}</span>
+                  </div>
+                  )
+                })
+              }
+            </div>
+
+            <div className='section-title-desc'>
+              <div className='numberRound'>
+                <span>02</span>
+              </div>
+              <div className='section-details' >
+                <h3 className='section-subtitle'>Corporate Websites</h3>
+                <p className='section-subparagraph'>
+                Inspiring, functional, and result-oriented websites for enterprises.
+                Full-cycle award-winning solutions from website strategy to 
+                complex custom development.</p>
+              </div>
+            </div>
+            <div className='projects-container'>
+              {
+                projects.map(it => {
+                  return(
+                    <div className='project'>
+                      <img src={it.img} className='project-img' />
+                      <span className='project-title'>{it.name}</span>
+                  </div>
+                  )
+                })
+              }
+            </div>
+        </div>
 
       </div>
     </div>

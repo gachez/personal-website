@@ -18,7 +18,7 @@
   flex-direction: row;
   justify-content: space-between;
   font-weight: 400;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.15em;
 }
 .hero{
   height: 70vh;
@@ -50,4 +50,60 @@
 .work-title{
   font-size: 64px;
   padding-left: 10%;
+}
+.section-title-desc{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10%;
+}
+.numberRound{
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #191b1d;
+  color: #fff;
+}
+.section-details{
+  display: grid;
+  width: 48%;
+}
+.section-subtitle{
+  font-size: 28px;
+  font-weight: bold;
+}
+.section-subparagraph{
+  font-size: 24px;
+}
+.projects-container{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: 10%;
+  padding-bottom: 5%;
+  padding-top: 2.5%;
+}
+.project{
+  width: 48%;
+  height: 318px;
+  display: grid;
+  cursor: pointer;
+}
+.project:hover{
+  opacity: 0.6;
+}
+.project-img{
+  height: 90%;
+  width: 100%;
+  object-fit: cover;
+}
+.project-title{
+  font-weight: bold;
+}
+.project-title:hover{
+  color: #fff;
 }
