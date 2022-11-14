@@ -1,5 +1,5 @@
 .Container{
-  background-color: #cdcecf;
+  background-color: #fff;
 }
 .navbar{
   display: flex;
@@ -9,6 +9,9 @@
   border-bottom: 0.5px solid;
   padding-left: 1rem;
   padding-right: 1rem;
+  position: sticky;
+  top: 0;
+  background-color: #cdcecf;
 }
 .navbar-items{
   width: 30%;
@@ -21,6 +24,7 @@
   letter-spacing: 0.15em;
 }
 .hero{
+  background-color: #cdcecf;
   height: 70vh;
   display: grid;
 }
@@ -84,9 +88,8 @@
 .projects-container{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  width: 80%;
   margin-left: 10%;
+  width: 80%;
   padding-bottom: 5%;
   padding-top: 2.5%;
 }
@@ -96,16 +99,66 @@
   height: 340px;
   display: grid;
   cursor: pointer;
+  margin: 0.5rem;
+  margin-bottom: 2rem;
 }
 .project:hover{
   opacity: 0.6;
 }
 .project-img{
-  height: 90%;
+  height: 320px;
   width: 100%;
   object-fit: cover;
 }
 .project-title{
   font-weight: bold;
   padding-bottom: 2rem;
+  padding-top: 0.5rem;
+}
+.skills{
+  background-color: #191b1d;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 80vh;
+}
+.skills-A{
+  font-size: 34px;
+  color: #fff;
+  width: 50%;
+  display: flex;
+  padding: 10%;
+}
+.skills-B{
+  width: 50%;
+}
+.down{
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.skills-item{
+  display: flex;
+  flex-direction: row;
+  border-bottom: solid 1px #fff;
+  align-items: center;
+  width: 70%;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.skills-item-title{
+  font-size: 2rem;
+  font-weight: bolder;
+  color: #fff;
+}
+.skills-item-title:hover{
+  text-decoration:line-through;
+}
+.skills-A-title{
+  font-size: 24px;
+  font-weight: lighter;
 }

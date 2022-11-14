@@ -8,47 +8,69 @@ import BK from './assets/bloomsfield.png'
 import AA from './assets/anwani.png'
 import B2b from './assets/b2b.png'
 import DS from './assets/ds.png'
+import Anasa from './assets/anasa.png'
+import Down from './assets/down-arrow.png'
 
 const projects = [
   {
     name: 'Auditpap - Personal finance application',
     img: 'http://auditpap.tengezastudios.co.ke/images/mockups.png',
-    category: 'digital products'
+    category: 'Digital products'
   },
   {
     name: 'Elimufy - School system',
     img: Dior,
-    category: 'digital products'
+    category: 'Digital products'
   },
   {
     name: 'Mengesa Advocates - Law firm',
     img: MA,
-    category: 'corporate'
+    category: 'Corporate'
   },
   {
     name: 'Purpleteam Cybersec - Cyber security firm',
     img: PT,
-    category: 'corporate'
+    category: 'Corporate'
   },
   {
     name: 'Bloomsfield Kindergarten - Pre school',
     img: BK,
-    category: 'corporate'
+    category: 'Corporate'
   },
   {
     name: 'Anwani Architects - Architecture firm',
     img: AA,
-    category: 'corporate'
+    category: 'Corporate'
   },
   {
     name: 'B2B - Business to business',
     img: B2b,
-    category: 'corporate'
+    category: 'Corporate'
   },
   {
     name: 'Datasec Ltd - Cybersecurity firm',
     img: DS,
-    category: 'corporate'
+    category: 'Corporate'
+  },
+  {
+    name: 'Anasa Ventures - Art exchange website',
+    img: Anasa,
+    category: 'E-commerce'
+  }
+]
+
+const skills = [
+  {
+    name: 'Frontend Development'
+  },
+  {
+    name: 'Backend Development'
+  },
+  {
+    name: 'Database Development'
+  },
+  {
+    name: 'Version Control'
   }
 ]
 
@@ -91,7 +113,7 @@ function App() {
             <div className='projects-container'>
               {
                 projects
-                .filter(it => it.category === 'digital products')
+                .filter(it => it.category === 'Digital products')
                 .map(it => {
                   return(
                     <div className='project'>
@@ -118,7 +140,7 @@ function App() {
             <div className='projects-container'>
               {
                 projects
-                .filter(it => it.category === 'corporate')
+                .filter(it => it.category === 'Corporate')
                 .map(it => {
                   return(
                     <div className='project'>
@@ -129,8 +151,53 @@ function App() {
                 })
               }
             </div>
-        </div>
 
+            <div className='section-title-desc'>
+              <div className='numberRound'>
+                <span>03</span>
+              </div>
+              <div className='section-details' >
+                <h3 className='section-subtitle'>Ecommerce</h3>
+                <p className='section-subparagraph'>
+                Inspiring, functional, and result-oriented websites for enterprises.
+                Full-cycle award-winning solutions from website strategy to 
+                complex custom development.</p>
+              </div>
+        </div>
+        <div className='projects-container'>
+              {
+                projects
+                .filter(it => it.category === 'E-commerce')
+                .map(it => {
+                  return(
+                    <div className='project'>
+                      <img src={it.img} className='project-img' />
+                      <span className='project-title'>{it.name}</span>
+                  </div>
+                  )
+                })
+              }
+            </div>
+      </div>
+      </div>
+      <div className='skills'>
+              <div className='skills-A'>
+                <p className='skills-A-title'>My skills</p>
+              </div>
+              <div className='skills-B'>
+                 {
+                  skills.map(it => {
+                    return(
+                    <div className='skills-item' >
+                      <h4 className='skills-item-title'>{it.name}</h4>
+                      <div className='down'>
+                        <img style={{width: '24px', height: '16px', objectFit: 'contain'}}  src={Down}  />
+                      </div>
+                   </div>
+                    )
+                  })
+                 }
+              </div>
       </div>
     </div>
   );
