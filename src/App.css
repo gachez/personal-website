@@ -23,7 +23,6 @@
 .hero{
   height: 70vh;
   display: grid;
-  margin-bottom: 2.5%;
 }
 .hero-div{
   margin: auto;
@@ -46,6 +45,9 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+.work{
+  background-color: #fff;
 }
 .work-title{
   font-size: 64px;
@@ -81,6 +83,7 @@
 }
 .projects-container{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 80%;
   margin-left: 10%;
@@ -89,7 +92,8 @@
 }
 .project{
   width: 48%;
-  height: 318px;
+  min-width: 45%;
+  height: 340px;
   display: grid;
   cursor: pointer;
 }
@@ -103,7 +107,5 @@
 }
 .project-title{
   font-weight: bold;
-}
-.project-title:hover{
-  color: #fff;
+  padding-bottom: 2rem;
 }

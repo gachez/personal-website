@@ -2,6 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import Video from './assets/videos/video.mp4'
 import Dior from './assets/dior.jpg'
+import MA from './assets/mengesa5.png'
+import PT from './assets/purple-purp.png'
+import BK from './assets/bloomsfield.png'
+import AA from './assets/anwani.png'
+import B2b from './assets/b2b.png'
+import DS from './assets/ds.png'
 
 const projects = [
   {
@@ -13,6 +19,36 @@ const projects = [
     name: 'Elimufy - School system',
     img: Dior,
     category: 'digital products'
+  },
+  {
+    name: 'Mengesa Advocates - Law firm',
+    img: MA,
+    category: 'corporate'
+  },
+  {
+    name: 'Purpleteam Cybersec - Cyber security firm',
+    img: PT,
+    category: 'corporate'
+  },
+  {
+    name: 'Bloomsfield Kindergarten - Pre school',
+    img: BK,
+    category: 'corporate'
+  },
+  {
+    name: 'Anwani Architects - Architecture firm',
+    img: AA,
+    category: 'corporate'
+  },
+  {
+    name: 'B2B - Business to business',
+    img: B2b,
+    category: 'corporate'
+  },
+  {
+    name: 'Datasec Ltd - Cybersecurity firm',
+    img: DS,
+    category: 'corporate'
   }
 ]
 
@@ -54,7 +90,9 @@ function App() {
             </div>
             <div className='projects-container'>
               {
-                projects.map(it => {
+                projects
+                .filter(it => it.category === 'digital products')
+                .map(it => {
                   return(
                     <div className='project'>
                       <img src={it.img} className='project-img' />
@@ -79,7 +117,9 @@ function App() {
             </div>
             <div className='projects-container'>
               {
-                projects.map(it => {
+                projects
+                .filter(it => it.category === 'corporate')
+                .map(it => {
                   return(
                     <div className='project'>
                       <img src={it.img} className='project-img' />
