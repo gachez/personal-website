@@ -254,6 +254,9 @@ html{
 .skill-item-section{
   width: 100%;
 }
+.work-title{
+  font-size: 48px;
+}
 }
 
 /* Small devices (landscape tablets, 768px and under) */
@@ -274,6 +277,9 @@ html{
 
   .title-img{
     width: 100%;
+    display: grid;
+    grid-auto-flow: row;
+    gap: 2rem;
   }
   
 .projects-container{
@@ -296,8 +302,10 @@ html{
   }
   .footer{
     display: grid;
-    gap: 1rem;
+    gap: 1.5rem;
     height: auto;
+    justify-content: flex-start;
+    padding-left: 10%;
   }
 
   .cp{
