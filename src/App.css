@@ -230,10 +230,70 @@ html{
 }
 .menu{
   display: block;
+  margin-right: 1rem;
+}
+.small-menu{
+  display: none;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  .small-menu{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #cdcecf;
+    position: fixed;
+    top: 70px;
+  }
+  .small-menu-items{
+    padding-left: 1rem;
+    padding-top: 25%;
+    align-items: center;
+    justify-content: center;
+    border-top: solid 0.5px rgba(0,0,0,0.1);
+    border-bottom: solid 0.5px rgba(0,0,0,0.1);
+  }
+  .small-menu-items a{
+    text-decoration: none;
+    color: #191b1d;
+    font-size: 2.5rem;
+    font-weight: bolder;
+  }
+  .small-menu-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 15%;
+  }
+  .sm-pill1{
+    background-color: gray;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5rem;
+    height: 3rem;
+    width: 40%;
+  }
+  .sm-pill2{
+    background-color:#191b1d;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5rem;
+    height: 3rem;
+    width: 40%;
+  }
+  .navbar{
+    position: fixed;
+    top: 0;
+    width: 95%;
+  }
   .navbar-items{
     display: none;
   }
@@ -264,6 +324,62 @@ html{
 
 /* Small devices (landscape tablets, 768px and under) */
 @media only screen and (max-width: 768px) {
+  .small-menu{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #cdcecf;
+    position: fixed;
+    top: 70px;
+  }
+  .small-menu-items{
+    padding-left: 1rem;
+    padding-top: 25%;
+    align-items: center;
+    justify-content: center;
+    border-top: solid 0.5px rgba(0,0,0,0.1);
+    border-bottom: solid 0.5px rgba(0,0,0,0.1);
+  }
+  .small-menu-items a{
+    text-decoration: none;
+    color: #191b1d;
+    font-size: 2.5rem;
+    font-weight: bolder;
+  }
+  .small-menu-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 15%;
+  }
+  .sm-pill1{
+    background-color: gray;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5rem;
+    height: 3rem;
+    width: 40%;
+  }
+  .sm-pill2{
+    background-color:#191b1d;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5rem;
+    height: 3rem;
+    width: 40%;
+  }
+  .navbar{
+    position: fixed;
+    top: 0;
+    width: 95%;
+  }
   .navbar-items{
    display: none;
   }
@@ -321,10 +437,21 @@ html{
   }
  }
 
+ @media only screen and (max-height: 720px) { 
+  .hero{
+    padding-top: 25%;
+  }
+  .hero-title{
+    font-size: 2.5rem;
+  }
+ }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 .navbar-items{
   display: none;
+}
+.hero{
+  padding-top: 10%;
 }
 .work-section{
   display: flex;
@@ -337,11 +464,70 @@ html{
  .navbar-items{
   display: none;
  }
+ .small-menu{
+  display: none;
+ }
+ .small-menu{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #cdcecf;
+  position: fixed;
+  top: 70px;
+}
+.small-menu-items{
+  padding-left: 1rem;
+  padding-top: 20%;
+  align-items: center;
+  justify-content: center;
+  border-top: solid 0.5px rgba(0,0,0,0.1);
+  border-bottom: solid 0.5px rgba(0,0,0,0.1);
+}
+.small-menu-items a{
+  text-decoration: none;
+  color: #191b1d;
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+.small-menu-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 15%;
+}
+.sm-pill1{
+  background-color: gray;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5rem;
+  height: 3rem;
+  width: 40%;
+}
+.sm-pill2{
+  background-color:#191b1d;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5rem;
+  height: 3rem;
+  width: 40%;
+}
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
- .menu{
+ .navbar{
+  position: fixed;
+  top: 0;
+  width: 95%;
+ }
+  .menu{
   display: none;
  }
  .navbar-items{

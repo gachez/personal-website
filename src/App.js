@@ -11,6 +11,8 @@ import DS from './assets/ds.png'
 import Anasa from './assets/anasa.png'
 import Down from './assets/down-arrow.png'
 import Menu from './assets/menu.png'
+import Close from './assets/close.png'
+import Up from './assets/up-arrow.png'
 import React from 'react';
 
 const projects = [
@@ -82,11 +84,33 @@ const skills = [
 
 function App() {
   const [selectedSkill, setSelectedSkill] = React.useState('')
+  const [openMenu,setOpenMenu] = React.useState(false)
   React.useEffect(() => {
     setSelectedSkill(selectedSkill)
   },[selectedSkill])
+
   return (
     <div className="Container">
+      <div style={{
+        position: 'fixed',
+        top: '95%',
+        right: '1rem',
+        width: '2.5rem',
+        height: '2.5rem',
+        borderRadius: '50%',
+        backgroundColor: '#fff',
+        display: 'grid'
+      }}
+      onClick={() => {
+        window.scrollTo(0,0)
+      }}
+      >
+        <img
+         style={{margin: 'auto',width: '1.75rem', height:'1.75rem'}}
+         src={Up}
+         alt='up'
+        />
+      </div>
       <div className='navbar'>
         <h2 className='navbar-icon'>BG</h2>
         <div className='navbar-items'>
@@ -96,12 +120,43 @@ function App() {
           <a href='#contact'><p>Contact</p></a>
         </div>
         <div className='menu'>
-          <img src={Menu} style={{width: '36px', height: '36px'}} />
+          <img
+           alt='close'
+           src={!openMenu?Menu:Close} 
+           style={{width: '32px', height: '32px'}}
+           onClick={() => {
+            openMenu?setOpenMenu(false):setOpenMenu(true)
+         }} 
+          />
         </div>
       </div>
+      <div className='small-menu' style={{display: openMenu?'flex':'none'}}>
+          <div className='small-menu-items'>
+            <a href='#work' onClick={() => {
+              setOpenMenu(false)
+            }}><p>Work</p></a>
+            <a href='#skills' onClick={() => {
+              setOpenMenu(false)
+            }} ><p>Skills</p></a>
+            <a href='./assets/Resume.docx' onClick={() => {
+              setOpenMenu(false)
+            }} ><p>Resume</p></a>
+            <a href='#contact' onClick={() => {
+              setOpenMenu(false)
+            }} ><p>Contact</p></a>
+          </div>
+          <div className='small-menu-footer'>
+            <div className='sm-pill1'>
+              <span>Resume</span>
+            </div>
+            <div className='sm-pill2'>
+              <span>Get in touch</span>
+            </div>
+          </div>
+        </div>
       <div className='hero' id='hero'>
         <div className='hero-div'>
-          <h1 className='hero-title'>Hello 👋, I'm Brian a <strong style={{color:'white'}}>Fullstack</strong> Software engineer</h1>
+          <h1 className='hero-title'>Hello 👋, I'm Brian <strong style={{color:'white'}}>Fullstack</strong> Software engineer</h1>
           <p className='hero-subtitle'>I build perfomant websites and mobile application that scale</p>
         </div>
       </div>
