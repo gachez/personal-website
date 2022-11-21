@@ -9,7 +9,7 @@ html{
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: 0.5px solid;
+  border-bottom: 0.5px solid rgba(0,0,0,0.1);
   padding-left: 1rem;
   padding-right: 1rem;
   position: sticky;
@@ -134,6 +134,7 @@ html{
   flex-direction: row;
   justify-content: space-between;
   height: auto;
+  padding-bottom: 10%;
 }
 .skills-A{
   font-size: 34px;
@@ -156,13 +157,15 @@ html{
   border-radius: 50%;
 }
 .skills-item{
-  display: flex;
-  flex-direction: row;
   border-bottom: solid 1px #fff;
   align-items: center;
   width: 70%;
   justify-content: space-between;
   cursor: pointer;
+}
+.skills-item-section{
+  display: flex;
+  flex-direction: row;
 }
 .skills-item-title{
   font-size: 2rem;
@@ -175,4 +178,162 @@ html{
 .skills-A-title{
   font-size: 24px;
   font-weight: lighter;
+}
+.footer{
+  margin-top: 8px;
+  width: 100%;
+  height: 10vh;
+  border-top: solid 0.5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+.cp{
+  display: grid;
+}
+.cp span{
+  font-size: 12px;
+  color: rgba(0,0,0,0.6);
+}
+.pill-presentation{
+  background-color:#cdcecf;
+  color: black;
+  border-radius: 30px;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.pill{
+  padding: 16px;
+  background-color: #191b1d;
+  color: #fff;
+  align-items: center;
+  justify-content:center ;
+  border-radius: 28px;
+}
+.links{
+  display: grid;
+  gap: 0.5rem;
+}
+.links a{
+  cursor: pointer;
+  text-decoration: none;
+  color: #191b1d;
+}
+.links a:hover{
+  color: #cdcecf;
+}
+.menu{
+  display: block;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .navbar-items{
+    display: none;
+  }
+  .work-section{
+    display: flex;
+    flex-direction: column;
+  }
+  
+.projects-container{
+  flex-direction: column;
+}
+.project{
+  width: 100%;
+}
+.section-title-desc{
+  flex-direction: column;
+}
+.section-details{
+  width: 90%;
+}
+.skill-item-section{
+  width: 100%;
+}
+}
+
+/* Small devices (landscape tablets, 768px and under) */
+@media only screen and (max-width: 768px) {
+  .navbar-items{
+   display: none;
+  }
+  .menu{
+    cursor: pointer;
+  }
+  .hero-title{
+    font-size: 48px;
+  }
+  .work-section{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title-img{
+    width: 100%;
+  }
+  
+.projects-container{
+  flex-direction: column;
+  }
+  .project{
+    width: 100%;
+  }
+  .skills{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+  }
+  .skills-B{
+    width: 90%;
+    margin-left: 10%;
+    justify-content: center;
+    padding: 0;
+  }
+  .footer{
+    display: grid;
+    gap: 1rem;
+    height: auto;
+  }
+
+  .cp{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 8rem;
+    justify-content: space-between;
+  }
+ }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+.navbar-items{
+  display: none;
+}
+.work-section{
+  display: flex;
+  flex-direction: column;
+}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+ .navbar-items{
+  display: none;
+ }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+ .menu{
+  display: none;
+ }
+ .navbar-items{
+  display: flex;
+ }
+  
 }

@@ -10,6 +10,7 @@ import B2b from './assets/b2b.png'
 import DS from './assets/ds.png'
 import Anasa from './assets/anasa.png'
 import Down from './assets/down-arrow.png'
+import Menu from './assets/menu.png'
 import React from 'react';
 
 const projects = [
@@ -91,14 +92,17 @@ function App() {
         <div className='navbar-items'>
           <a href='#work'><p>Work</p></a>
           <a href='#skills'><p>Skills</p></a>
-          <a href='#resume'><p>Resume</p></a>
+          <a href='./assets/Resume.docx'><p>Resume</p></a>
           <a href='#contact'><p>Contact</p></a>
+        </div>
+        <div className='menu'>
+          <img src={Menu} style={{width: '36px', height: '36px'}} />
         </div>
       </div>
       <div className='hero' id='hero'>
         <div className='hero-div'>
-          <h1 className='hero-title'>Hello 👋, I'm Brian a Software engineer, Innovator and Enterprenuer</h1>
-          <p className='hero-subtitle'>I build perfomant websites and mobile apps using React</p>
+          <h1 className='hero-title'>Hello 👋, I'm Brian a <strong style={{color:'white'}}>Fullstack</strong> Software engineer</h1>
+          <p className='hero-subtitle'>I build perfomant websites and mobile application that scale</p>
         </div>
       </div>
       <div className='banner' id='banner'>
@@ -201,10 +205,18 @@ function App() {
                       selectedSkill === it.name?setSelectedSkill(''):setSelectedSkill(it.name)
                     }}>
                       <div className='skill-item-section'>
-                        <h4 className='skills-item-title'>{it.name}</h4>
-                        {/* <div className='down'>
-                          <img style={{width: '24px', height: '16px', objectFit: 'contain'}}  src={Down}  />
-                        </div> */}
+                        <div style={{
+                          display:'flex', 
+                          alignItems: 'center', 
+                          justifyContent: 'space-between'
+                          }}
+                          className='title-img'
+                          >
+                          <h4 className='skills-item-title'>{it.name}</h4>
+                          <div className='down'>
+                            <img style={{width: '24px', height: '16px', objectFit: 'contain'}} alt='down'  src={Down}  />
+                          </div>
+                        </div>
                         <p style={{color:'#fff', display: selectedSkill===it.name?'block':'none'}}>{it.description}</p>
                       </div>
                    </div>
@@ -213,6 +225,25 @@ function App() {
                  }
               </div>
       </div>
+      <footer className='footer'>
+
+        <div className='links'>
+          <a href='https://github.com/gachez'>Github</a>
+          <a href='https://www.linkedin.com/in/brian-gacheru-4b8aa1165/'>Linkedin</a>
+        </div>
+        <div className='pill-presentation' onClick={() => {
+          window.open('./assets/Resume.docx')
+        }}>
+          <span>Download resume</span>
+        </div>
+        <div className='pill'>
+          <span>Get in touch</span>
+        </div>
+        <div className='cp'>
+          <h2>BG</h2>
+          <span>© BG 2022</span>
+        </div>
+      </footer>
     </div>
   );
 }
