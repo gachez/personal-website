@@ -141,6 +141,11 @@ html{
   padding-bottom: 2rem;
   padding-top: 0.5rem;
 }
+.project-subtitle{
+  font-weight: normal;
+  padding-top: 0.5rem;
+  color: rgba(0,0,0,0.6);
+}
 .skills{
   background-color: #191b1d;
   display: flex;
@@ -311,7 +316,9 @@ html{
     display: flex;
     flex-direction: column;
   }
-  
+  .banner-text{
+    font-size: 32px;
+  }
 .projects-container{
   flex-direction: column;
 }

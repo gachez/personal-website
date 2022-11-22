@@ -192,7 +192,6 @@ function App() {
                   </AnimationOnScroll> 
                 </div>
               </AnimationOnScroll>
-              <Parallax speed={-10}>
                 <div className='projects-container'>
                   {
                     projects
@@ -201,16 +200,18 @@ function App() {
                       return(
                         <AnimationOnScroll className='project' delay={index * 100 } animateIn='animate__slideInUp' animateOnce={true}>
                           <div >
-                            <img src={it.img} className='project-img' />
-                            <span className='project-title'>{it.name}</span>
+                            <img alt='img' src={it.img} className='project-img' />
+                            <div>
+                              <span className='project-title'>{it.name.split('-')[0]}</span><br />
+                              <span className='project-subtitle'>{it.name.split('-')[1]}</span>
+                            </div>
+                            
                         </div>
                         </AnimationOnScroll>
                       )
                     })
                   }
                 </div>
-              </Parallax>
-            <Parallax speed={1} >
               <AnimationOnScroll animateIn='animate__sildeInUp'>
                 <div className='section-title-desc'>
                   <AnimationOnScroll animateIn='animate__slideInUp' delay={800} animateOnce={true}> 
@@ -228,8 +229,7 @@ function App() {
                       </div>
                     </AnimationOnScroll>
                   </div>
-              </AnimationOnScroll>
-            </Parallax>       
+              </AnimationOnScroll>   
 
               <div className='projects-container'>
                 {
@@ -239,8 +239,11 @@ function App() {
                     return(
                       <AnimationOnScroll className='project' delay={index * 100 } animateIn='animate__slideInUp' animateOnce={true}>
                           <div>
-                            <img src={it.img} className='project-img' />
-                            <span className='project-title'>{it.name}</span>
+                            <img alt='img' src={it.img} className='project-img' />
+                            <div>
+                              <span className='project-title'>{it.name.split('-')[0]}</span><br />
+                              <span className='project-subtitle'>{it.name.split('-')[1]}</span>
+                            </div>
                         </div>
                       </AnimationOnScroll>  
                     )
@@ -272,8 +275,9 @@ function App() {
                     return(
                     <AnimationOnScroll className='project' animateIn='animate__slideInUp' delay={1000} animateOnce={true}>
                         <div>
-                          <img src={it.img} className='project-img' />
-                          <span className='project-title'>{it.name}</span>
+                          <img alt='img' src={it.img} className='project-img' />
+                          <span className='project-title'>{it.name.split('-')[0]}</span><br />
+                          <span className='project-subtitle'>{it.name.split('-')[1]}</span>
                         </div>
                     </AnimationOnScroll> 
                     )
