@@ -534,4 +534,10 @@ html{
   display: flex;
  }
   
+ .hero{
+  padding-top: 0;
+ }
+ .hero-title{
+  font-size: 64px;
+ }
 }
