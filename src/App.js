@@ -13,6 +13,7 @@ import Close from './assets/close.png'
 import Up from './assets/up-arrow.png'
 import React from 'react';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
+import { Parallax } from 'react-scroll-parallax';
 
 const projects = [
   {
@@ -110,7 +111,7 @@ function App() {
          alt='up'
         />
       </div>
-      <div className='navbar'>
+      <div className='navbar' style={{zIndex: 99}}>
         <h2 className='navbar-icon'>BG</h2>
         <div className='navbar-items'>
           <a href='#work'><p>Work</p></a>
@@ -153,156 +154,173 @@ function App() {
             </div>
           </div>
         </div>
+     <Parallax speed={-30}>
       <div className='hero' id='hero'>
-        <div className='hero-div'>
-            <h1 className='hero-title animate__animated animate__fadeIn animate__fast'>Hello 👋, I'm Brian <strong style={{color:'white'}}>Fullstack</strong> Software engineer</h1>
-            <p className='hero-subtitle animate__animated animate__fadeIn animate__slow'>I build perfomant websites and mobile application that scale</p>
+          <div className='hero-div'>
+                <h1 className='hero-title animate__animated animate__fadeIn animate__fast'>Hello 👋, I'm Brian <strong style={{color:'white'}}>Fullstack</strong> Software Engineer</h1>
+            </div>
         </div>
-      </div>
-      <div className='banner animate__animated animate__fadeIn animate__slower' id='banner'>
-      </div>
-      <div className='work' id='work'>
-        
-        <AnimationOnScroll animateIn="animate__slideInUp" animateOnce={true}>
-          <h1 className='work-title'>Work</h1>
-        </AnimationOnScroll> 
-        <div className='work-section'>
-          <AnimationOnScroll animateIn='animate__slideInUp' animateOnce={true}>
-            <div className='section-title-desc'>
-               <AnimationOnScroll animateIn='animate__sildeInUp' delay={800} animateOnce={true}> 
-                <div className='numberRound'>
-                  <span>01</span>
-                </div></AnimationOnScroll>
-               <AnimationOnScroll className='section-details' animateIn='animate__slideInUp' delay={950} animateOnce={true} >
-                <div>
-                    <h3 className='section-subtitle'>Digital Products</h3>
-                    <p className='section-subparagraph'>
-                      From idea to a product: 
-                      creating successful digital services for innovative 
-                      startups and established businesses with cutting-edge 
-                      UX, UI design,front and back-end development.</p>
-                  </div>
-                </AnimationOnScroll> 
-              </div>
-            </AnimationOnScroll>        
-            <div className='projects-container'>
-              {
-                projects
-                .filter(it => it.category === 'Digital products')
-                .map((it,index) => {
-                  return(
-                    <AnimationOnScroll className='project' delay={index * 100 } animateIn='animate__slideInUp' animateOnce={true}>
-                      <div >
-                        <img src={it.img} className='project-img' />
-                        <span className='project-title'>{it.name}</span>
+      </Parallax>   
+      <Parallax speed={1}>
+        <div className='banner animate__animated animate__fadeIn animate__slower' id='banner'>
+          <h1 className='banner-text'>
+            I build solid and scalable websites and mobile applications with great user experiences.
+          </h1>
+        </div>
+      </Parallax>
+      <Parallax speed={10}>
+        <div className='work' id='work'>
+          <AnimationOnScroll animateIn="animate__slideInUp" animateOnce={true}>
+            <h1 className='work-title'>Work</h1>
+          </AnimationOnScroll> 
+          <div className='work-section'>
+            <AnimationOnScroll animateIn='animate__slideInUp' animateOnce={true}>
+              <div className='section-title-desc'>
+                <AnimationOnScroll animateIn='animate__sildeInUp' delay={800} animateOnce={true}> 
+                  <div className='numberRound'>
+                    <span>01</span>
+                  </div></AnimationOnScroll>
+                <AnimationOnScroll className='section-details' animateIn='animate__slideInUp' delay={950} animateOnce={true} >
+                  <div>
+                      <h3 className='section-subtitle'>Digital Products</h3>
+                      <p className='section-subparagraph'>
+                        From idea to a product: 
+                        creating successful digital services for innovative 
+                        startups and established businesses with cutting-edge 
+                        UX, UI design,front and back-end development.</p>
+                    </div>
+                  </AnimationOnScroll> 
+                </div>
+              </AnimationOnScroll>
+              <Parallax speed={-10}>
+                <div className='projects-container'>
+                  {
+                    projects
+                    .filter(it => it.category === 'Digital products')
+                    .map((it,index) => {
+                      return(
+                        <AnimationOnScroll className='project' delay={index * 100 } animateIn='animate__slideInUp' animateOnce={true}>
+                          <div >
+                            <img src={it.img} className='project-img' />
+                            <span className='project-title'>{it.name}</span>
+                        </div>
+                        </AnimationOnScroll>
+                      )
+                    })
+                  }
+                </div>
+              </Parallax>
+            <Parallax speed={1} >
+              <AnimationOnScroll animateIn='animate__sildeInUp'>
+                <div className='section-title-desc'>
+                  <AnimationOnScroll animateIn='animate__slideInUp' delay={800} animateOnce={true}> 
+                    <div className='numberRound'>
+                      <span>02</span>
                     </div>
                     </AnimationOnScroll>
-                  )
-                })
-              }
-            </div>
-          <AnimationOnScroll animateIn='animate__sildeInUp'>
-            <div className='section-title-desc'>
-               <AnimationOnScroll animateIn='animate__slideInUp' delay={800} animateOnce={true}> 
-                <div className='numberRound'>
-                  <span>02</span>
-                </div>
+                    <AnimationOnScroll className='section-details' animateIn='animate__slideInUp' delay={950} animateOnce={true}>
+                      <div>
+                        <h3 className='section-subtitle'>Corporate Websites</h3>
+                        <p className='section-subparagraph'>
+                        Inspiring, functional, and result-oriented websites for enterprises.
+                        Full-cycle award-winning solutions from website strategy to 
+                        complex custom development.</p>
+                      </div>
+                    </AnimationOnScroll>
+                  </div>
+              </AnimationOnScroll>
+            </Parallax>       
+
+              <div className='projects-container'>
+                {
+                  projects
+                  .filter(it => it.category === 'Corporate')
+                  .map((it,index) => {
+                    return(
+                      <AnimationOnScroll className='project' delay={index * 100 } animateIn='animate__slideInUp' animateOnce={true}>
+                          <div>
+                            <img src={it.img} className='project-img' />
+                            <span className='project-title'>{it.name}</span>
+                        </div>
+                      </AnimationOnScroll>  
+                    )
+                  })
+                }
+              </div>
+            <AnimationOnScroll animateIn='animate__slideInUp' animateOnce={true}>
+              <div className='section-title-desc'>
+                <AnimationOnScroll animateIn='animate__slideInUp' delay={800} animateOnce={true}>
+                  <div className='numberRound'>
+                    <span>03</span>
+                  </div>
                 </AnimationOnScroll>
                 <AnimationOnScroll className='section-details' animateIn='animate__slideInUp' delay={950} animateOnce={true}>
-                  <div>
-                    <h3 className='section-subtitle'>Corporate Websites</h3>
+                  <div >
+                    <h3 className='section-subtitle'>Ecommerce</h3>
                     <p className='section-subparagraph'>
                     Inspiring, functional, and result-oriented websites for enterprises.
                     Full-cycle award-winning solutions from website strategy to 
                     complex custom development.</p>
                   </div>
                 </AnimationOnScroll>
-              </div>
-          </AnimationOnScroll>
-
-            <div className='projects-container'>
-              {
-                projects
-                .filter(it => it.category === 'Corporate')
-                .map((it,index) => {
-                  return(
-                    <AnimationOnScroll className='project' delay={index * 100 } animateIn='animate__slideInUp' animateOnce={true}>
+          </div></AnimationOnScroll>
+          <div className='projects-container'>
+                {
+                  projects
+                  .filter(it => it.category === 'E-commerce')
+                  .map(it => {
+                    return(
+                    <AnimationOnScroll className='project' animateIn='animate__slideInUp' delay={1000} animateOnce={true}>
                         <div>
                           <img src={it.img} className='project-img' />
                           <span className='project-title'>{it.name}</span>
-                      </div>
-                    </AnimationOnScroll>  
-                  )
-                })
-              }
-            </div>
-           <AnimationOnScroll animateIn='animate__slideInUp' animateOnce={true}>
-            <div className='section-title-desc'>
-              <AnimationOnScroll animateIn='animate__slideInUp' delay={800} animateOnce={true}>
-                <div className='numberRound'>
-                  <span>03</span>
-                </div>
-              </AnimationOnScroll>
-              <AnimationOnScroll animateIn='section-details animate__slideInUp' delay={950} animateOnce={true}>
-                <div >
-                  <h3 className='section-subtitle'>Ecommerce</h3>
-                  <p className='section-subparagraph'>
-                  Inspiring, functional, and result-oriented websites for enterprises.
-                  Full-cycle award-winning solutions from website strategy to 
-                  complex custom development.</p>
-                </div>
-              </AnimationOnScroll>
-        </div></AnimationOnScroll>
-        <div className='projects-container'>
-              {
-                projects
-                .filter(it => it.category === 'E-commerce')
-                .map(it => {
-                  return(
-                   <AnimationOnScroll className='project' animateIn='animate__slideInUp' animateOnce={true}>
-                      <div>
-                        <img src={it.img} className='project-img' />
-                        <span className='project-title'>{it.name}</span>
-                      </div>
-                   </AnimationOnScroll> 
-                  )
-                })
-              }
-            </div>
-      </div>
-      </div>
-      <div className='skills' id='skills' >
-              <div className='skills-A'>
+                        </div>
+                    </AnimationOnScroll> 
+                    )
+                  })
+                }
+              </div>
+        </div>
+        </div>
+      </Parallax>
+      <Parallax speed={5} >
+      <div className='skills' id='skills'>
+            <AnimationOnScroll className='skills-A' animateIn='animate__slideInUp' animateOnce>
+              <div>
                 <p className='skills-A-title'>My skills</p>
               </div>
+            </AnimationOnScroll>
               <div className='skills-B'>
                  {
-                  skills.map(it => {
+                  skills.map((it,index) => {
                     return(
-                    <div className='skills-item' onClick={() => {
-                      selectedSkill === it.name?setSelectedSkill(''):setSelectedSkill(it.name)
-                    }}>
-                      <div className='skill-item-section'>
-                        <div style={{
-                          display:'flex', 
-                          alignItems: 'center', 
-                          justifyContent: 'space-between'
-                          }}
-                          className='title-img'
-                          >
-                          <h4 className='skills-item-title'>{it.name}</h4>
-                          <div className='down'>
-                            <img style={{width: '24px', height: '16px', objectFit: 'contain'}} alt='down'  src={Down}  />
+                    <AnimationOnScroll animateIn='animate__slideInUp' delay={index * 100} animateOnce>
+                      <div className='skills-item' onClick={() => {
+                        selectedSkill === it.name?setSelectedSkill(''):setSelectedSkill(it.name)
+                      }}>
+                        <div className='skill-item-section'>
+                          <div style={{
+                            display:'flex', 
+                            alignItems: 'center', 
+                            justifyContent: 'space-between'
+                            }}
+                            className='title-img'
+                            >
+                            <h4 className='skills-item-title'>{it.name}</h4>
+                            <div className='down'>
+                              <img style={{width: '24px', height: '16px', objectFit: 'contain'}} alt='down'  src={Down}  />
+                            </div>
                           </div>
+                          <p style={{color:'#fff', display: selectedSkill===it.name?'block':'none'}}>{it.description}</p>
                         </div>
-                        <p style={{color:'#fff', display: selectedSkill===it.name?'block':'none'}}>{it.description}</p>
-                      </div>
-                   </div>
+                    </div>
+                    </AnimationOnScroll>
                     )
                   })
                  }
               </div>
       </div>
+      </Parallax>
       <footer className='footer'>
 
         <div className='links'>

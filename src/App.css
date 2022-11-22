@@ -41,7 +41,7 @@ html{
 }
 .hero{
   background-color: #cdcecf;
-  height: 70vh;
+  height: 80vh;
   display: grid;
 }
 .hero-div{
@@ -57,14 +57,21 @@ html{
 }
 .banner{
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 100%;
-  height: 70vh;
+  height: 60vh;
+  padding-left: 12.5%;
   background-image: url(./assets/banner.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+.banner-text{
+  font-size: 48px;
+  color: #fff;
+  font-weight: bolder;
+  text-align: left;
+  width: 60%;
 }
 .work{
   background-color: #fff;
@@ -72,6 +79,7 @@ html{
 .work-title{
   font-size: 64px;
   padding-left: 10%;
+  border-bottom: solid 1px rgba(0,0,0,0.1);
 }
 .section-title-desc{
   width: 80%;
@@ -108,6 +116,8 @@ html{
   width: 80%;
   padding-bottom: 5%;
   padding-top: 2.5%;
+  border-bottom: 00.5px solid rgba(0,0,0,0.1);
+  margin-bottom: 2.5%;
 }
 .project{
   width: 48%;
@@ -464,6 +474,9 @@ html{
  .navbar-items{
   display: none;
  }
+ .navbar{
+  width: 100%;
+ }
  .small-menu{
   display: none;
  }
@@ -525,7 +538,7 @@ html{
  .navbar{
   position: fixed;
   top: 0;
-  width: 95%;
+  width: 97%;
  }
   .menu{
   display: none;
